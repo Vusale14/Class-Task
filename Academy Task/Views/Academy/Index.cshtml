@@ -1,0 +1,24 @@
+﻿@model List<GroupTeacherInformation>
+
+    <h2>Davamiyyet</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Qrup adi</th>
+                <th>Muellim adi</th>
+                <th>Tarix</th>
+                <th>Davamiyyet</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach(var info in Model)
+        {
+            <tr>
+                <td>@info.Group.GroupName</td>
+                <td>@info.Teacher.TeacherName</td>
+                <td>@info.Information.Date.ToShortDateString()</td>
+                <td>@info.Information.Date.AttendanceStatus</td>
+            </tr>
+        }
+        </tbody>
+    </table>
